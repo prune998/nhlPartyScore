@@ -1,0 +1,39 @@
+# Team ID to watch for goals (e.g., 6 for Boston Bruins, 4 for Flyers)
+# 8 Montreal Canadians
+team_id: 8
+
+# How often to check for new scores (in seconds)
+poll_interval_seconds: 5s
+
+# Notification type: console, email, webhook, or hue
+notification_type: hue,console
+
+# Email configuration (for email notifications)
+email:
+  smtp_server: smtp.example.com
+  smtp_port: 587
+  username: your_email@example.com
+  password: your_password
+  from: your_email@example.com
+  to:
+    - recipient1@example.com
+    - recipient2@example.com
+
+# Webhook configuration (for webhook notifications)
+webhook:
+  url: https://webhook.example.com/endpoint
+  method: POST
+  headers:
+    Authorization: Bearer your_token
+    X-Custom-Header: custom_value
+
+# Hue configuration (for Philips Hue light notifications)
+hue:
+  bridge_ip: 192.168.0.12 # https://discovery.meethue.com/
+  username: abcdefghijklmnopqrstuvwxyz1234567890 # follow https://developers.meethue.com/develop/get-started-2/
+  light_id: 31
+  flash_type: lselect # "lselect" for long flash, "select" for short flash
+  hue: 34277 # flash color for goals (green)
+  opponent_hue: 0 # flash color for opponent goals (0 is red in Hue's color system)
+  sat: 254 # Full saturation
+  bri: 254 # Full brightness
